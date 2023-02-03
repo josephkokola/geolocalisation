@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\DashoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+   // return view('welcome');
+//});
+
+
+Auth::routes();
+
+//Route::get('/adlB', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/ho', [App\Http\Controllers\HomeController::class, 'log']);
+Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashoardController::class, 'index'] );
 });
