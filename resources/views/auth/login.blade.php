@@ -29,7 +29,7 @@
       <form action="{{ route('login') }}" method="post">
         @csrf
         <div class="input-group mb-3">
-          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
 
               @error('email')
                   <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
 
             @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -56,6 +56,9 @@
             </div>
           </div>
         </div>
+        <p class="mt-1">
+        <a href="{{route('page_email')}}">Mot de passe oublié</a>
+        </p>
         <div class="row">
           <!-- /.col -->
           <div class="col-12" style="position:center">
@@ -77,7 +80,7 @@
 <script src="{{asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('template/dist/js/adminlte.min.js')}}"></script>
-
+<script src="{{asset('js/custom.js')}}"></script>
 @livewireScripts
 </body>
 </html>

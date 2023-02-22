@@ -46,4 +46,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function sendEmail(){
+        return view('sendEmail');
+    }
+    public function reset(){
+        return view('pageReset');
+    }
 }

@@ -43,7 +43,7 @@
             <div class="dropdown">
               
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                         <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}           
+                         <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->nom }} {{ Auth::user()->prenoms }}          
                                 </a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="btn btn-primary" type="button" href="{{ route('login') }}"

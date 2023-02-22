@@ -73,6 +73,7 @@ trait AuthenticatesUsers
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
+
     }
 
     /**
